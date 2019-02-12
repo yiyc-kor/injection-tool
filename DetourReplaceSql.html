@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<script>
+function input(){
+	var text_array = document.forms.form1.query.value.split(' ')
+    
+    var text_result_array = []
+    
+    for (var i = 0; i < text_array.length; i++) {
+		text_result_array.push(text_array[i].slice(0, text_array[i].length/2) + text_array[i] + text_array[i].slice(text_array[i].length/2));
+	}
+
+    document.forms.form1.result.value = text_result_array.join(" ");
+}
+</script>
+<html>
+<body>
+<input onclick='input()' type='button' value='Click' id='button'><br>
+
+<form name="form1">
+  query:<br>
+  <textarea rows="3" name="query"></textarea>
+  <br>
+  result:<br>
+  <textarea rows="3" name="result"></textarea>
+</form>
+</body>
+</html>
